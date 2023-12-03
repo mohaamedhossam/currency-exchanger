@@ -91,11 +91,13 @@ export function Form({
                       value={toCurr}
                       onChange={(e) => setToCurr(e.target.value)}
                     >
-                      {array.map((curr, i) => (
-                        <option key={i} value={curr}>
-                          {curr}
-                        </option>
-                      ))}
+                      {typeof result === "object"
+                        ? Object.keys(result).map((currencyCode) => (
+                            <option key={currencyCode} value={currencyCode}>
+                              {currencyCode}
+                            </option>
+                          ))
+                        : ""}
                       {/* <option value="USD">USD</option>
                       <option value="EUR">euro</option>
                       <option value="SAR">sar</option>
