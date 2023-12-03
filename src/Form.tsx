@@ -13,8 +13,6 @@ export function Form({
   toCurr,
   setToCurr,
 }: any) {
-  // const [value, setValue] = useState<number>(0);
-
   const [buttonEnable, setButtonEnable] = useState<boolean>(false);
   const array: string[] = [
     "USD",
@@ -44,7 +42,7 @@ export function Form({
   async function handleConverte(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     axios(
-      `https://api.currencyapi.com/v3/latest?apikey=cur_live_ifi9VOGn7gpRneZeUmWwhAozQJHsISGJkXag72Ou&currencies=EUR%2CUSD%2CCAD%2CEGP%2CAED%2CCNY%2CSAR%2CBTC%2CCZK%2CAMD%2CJPY%2CAUD%2CCHF%2CHKD`
+      `https://api.currencyapi.com/v3/latest?apikey=cur_live_ifi9VOGn7gpRneZeUmWwhAozQJHsISGJkXag72Ou`
     )
       .then((response) => {
         console.log(response.data.data);
@@ -98,18 +96,6 @@ export function Form({
                             </option>
                           ))
                         : ""}
-                      {/* <option value="USD">USD</option>
-                      <option value="EUR">euro</option>
-                      <option value="SAR">sar</option>
-                      <option value="AED">aed</option>
-                      <option value="CNY">cny</option>
-                      <option value="EGP">egp</option>
-                      <option value="CAD">cad</option>
-                      <option value="BTC">btc</option>
-                      <option value="CZK">czk</option>
-                      <option value="AMD">amd</option>
-                      <option value="JPY">jpy</option>
-                      <option value="AUD">aud</option> */}
                     </select>
                   </div>
                 </div>
